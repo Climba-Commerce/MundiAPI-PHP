@@ -95,6 +95,8 @@ class CreateAddressRequest implements JsonSerializable
      */
     public $line2;
 
+    public $service_referer_name;
+
     /**
      * Constructor to set initial or default values of member properties
      * @param string $street       Initialization value for $this->street
@@ -108,21 +110,24 @@ class CreateAddressRequest implements JsonSerializable
      * @param array  $metadata     Initialization value for $this->metadata
      * @param string $line1        Initialization value for $this->line1
      * @param string $line2        Initialization value for $this->line2
+     * @param string $service_referer_name        Initialization value for $this->service_referer_name
+     *
      */
     public function __construct()
     {
-        if (11 == func_num_args()) {
-            $this->street       = func_get_arg(0);
-            $this->number       = func_get_arg(1);
-            $this->zipCode      = func_get_arg(2);
-            $this->neighborhood = func_get_arg(3);
-            $this->city         = func_get_arg(4);
-            $this->state        = func_get_arg(5);
-            $this->country      = func_get_arg(6);
-            $this->complement   = func_get_arg(7);
-            $this->metadata     = func_get_arg(8);
-            $this->line1        = func_get_arg(9);
-            $this->line2        = func_get_arg(10);
+        if (12 == func_num_args()) {
+            $this->street               = func_get_arg(0);
+            $this->number               = func_get_arg(1);
+            $this->zipCode              = func_get_arg(2);
+            $this->neighborhood         = func_get_arg(3);
+            $this->city                 = func_get_arg(4);
+            $this->state                = func_get_arg(5);
+            $this->country              = func_get_arg(6);
+            $this->complement           = func_get_arg(7);
+            $this->metadata             = func_get_arg(8);
+            $this->line1                = func_get_arg(9);
+            $this->line2                = func_get_arg(10);
+            $this->service_referer_name = func_get_arg(11);
         }
     }
 
@@ -133,17 +138,18 @@ class CreateAddressRequest implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['street']       = $this->street;
-        $json['number']       = $this->number;
-        $json['zip_code']     = $this->zipCode;
-        $json['neighborhood'] = $this->neighborhood;
-        $json['city']         = $this->city;
-        $json['state']        = $this->state;
-        $json['country']      = $this->country;
-        $json['complement']   = $this->complement;
-        $json['metadata']     = $this->metadata;
-        $json['line_1']       = $this->line1;
-        $json['line_2']       = $this->line2;
+        $json['street']                   = $this->street;
+        $json['number']                   = $this->number;
+        $json['zip_code']                 = $this->zipCode;
+        $json['neighborhood']             = $this->neighborhood;
+        $json['city']                     = $this->city;
+        $json['state']                    = $this->state;
+        $json['country']                  = $this->country;
+        $json['complement']               = $this->complement;
+        $json['metadata']                 = $this->metadata;
+        $json['line_1']                   = $this->line1;
+        $json['line_2']                   = $this->line2;
+        $json['service_referer_name']     = $this->service_referer_name;
 
         return $json;
     }
