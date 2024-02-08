@@ -62,6 +62,7 @@ class TransfersController extends BaseController
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
             'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
             'content-type'  => 'application/json; charset=utf-8'
         );
 
@@ -121,7 +122,8 @@ class TransfersController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
-            'Accept'        => 'application/json'
+            'Accept'        => 'application/json',
+            'ServiceRefererName' => Configuration::$serviceRefererName,
         );
 
         //set HTTP basic auth parameters

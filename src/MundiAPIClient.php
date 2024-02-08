@@ -19,10 +19,12 @@ class MundiAPIClient
      */
     public function __construct(
         $basicAuthUserName = null,
-        $basicAuthPassword = null
+        $basicAuthPassword = null,
+        $serviceRefererName = null
     ) {
         Configuration::$basicAuthUserName = $basicAuthUserName ? $basicAuthUserName : Configuration::$basicAuthUserName;
         Configuration::$basicAuthPassword = $basicAuthPassword ? $basicAuthPassword : Configuration::$basicAuthPassword;
+        Configuration::$serviceRefererName = $serviceRefererName ? $serviceRefererName : Configuration::$serviceRefererName;
     }
     /**
      * Singleton access to Subscriptions controller

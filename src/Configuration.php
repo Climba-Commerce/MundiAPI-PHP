@@ -19,6 +19,8 @@ class Configuration
      */
     public static $BASEURI = 'https://api.mundipagg.com/core/v1';
 
+    public static $serviceRefererName = '';
+
     /**
      * The username to use with basic authentication
      * @var string
