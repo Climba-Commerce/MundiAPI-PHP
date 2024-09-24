@@ -17,7 +17,7 @@ class Configuration
      * The base Uri for API calls
      * @var string
      */
-    public static $BASEURI = 'https://api.mundipagg.com/core/v1';
+    public static $BASEURI = 'https://api.pagar.me/core/v5/';
     /**
      * @todo Replace the $serviceRefererName with an appropriate value
      */
