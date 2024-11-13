@@ -88,11 +88,14 @@ class BaseController
         if ($response->getStatusCode() == 422) {
             throw new Exceptions\ErrorException('Contract validation error', $_httpContext);
         }
+        if ($response->getStatusCode() == 429) {
+            throw new Exceptions\ErrorException('API Rate Limit Exceeded', $_httpContext);
+        }
         if ($response->getStatusCode() == 500) {
             throw new Exceptions\ErrorException('Internal server error', $_httpContext);
         }
         if (($response->getStatusCode() < 200) || ($response->getStatusCode() > 208)) { //[200,208] = HTTP OK
-            throw new APIException('HTTP Response Not OK', $_httpContext);
+            throw new APIException('An Error Has Occurred. Status returned was: ' . $response->getStatusCode(), $_httpContext);
         }
     }
 }
