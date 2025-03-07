@@ -15,6 +15,8 @@ e este projeto adere ao [Versionamento Semântico](https://semver.org/lang/pt-BR
   - APIHelper
   - Configuration
   - BaseController
+  - Modelos (GetCustomerResponse, GetCardResponse, CreateCustomerRequest)
+  - Controladores adicionais (CustomersController, ChargesController, OrdersController)
 
 ### Alterado
 - Atualização das dependências para compatibilidade com PHP 8.0
