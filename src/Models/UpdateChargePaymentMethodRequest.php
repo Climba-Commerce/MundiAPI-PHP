@@ -68,6 +68,13 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
     public $cash;
 
     /**
+     * Pix data
+     *@required
+     *@var \MundiAPILib\Models\CreatePixPaymentRequest $pix public property
+     */
+    public $pix;
+
+    /**
      * Bank Transfer data
      * @required
      * @maps bank_transfer
@@ -97,7 +104,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
      */
     public function __construct()
     {
-        if (9 == func_num_args()) {
+        if (10 == func_num_args()) {
             $this->updateSubscription = func_get_arg(0);
             $this->paymentMethod      = func_get_arg(1);
             $this->creditCard         = func_get_arg(2);
@@ -107,6 +114,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
             $this->cash               = func_get_arg(6);
             $this->bankTransfer       = func_get_arg(7);
             $this->privateLabel       = func_get_arg(8);
+            $this->pix = func_get_arg(9);
         }
     }
 
@@ -124,6 +132,7 @@ class UpdateChargePaymentMethodRequest implements JsonSerializable
         $json['boleto']              = $this->boleto;
         $json['voucher']             = $this->voucher;
         $json['cash']                = $this->cash;
+        $json['pix'] = $this->pix;
         $json['bank_transfer']       = $this->bankTransfer;
         $json['private_label']       = $this->privateLabel;
 
