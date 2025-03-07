@@ -1,11 +1,38 @@
 # Getting started
 
-Mundipagg API
+Mundipagg API - Versão 3.3.0
+
+## Novidades na versão 3.3.0
+
+- Suporte para testes unitários com PHPUnit
+- Configuração do Docker para execução dos testes
+- Compatibilidade com PHP 8.0
+- Melhorias na documentação e no código
+
+Para mais detalhes, consulte o [CHANGELOG.md](CHANGELOG.md).
+
+## Como executar os testes
+
+Este projeto inclui testes unitários que podem ser executados usando o Docker:
+
+```bash
+# Construir a imagem Docker
+docker compose build
+
+# Executar os testes
+docker compose up
+```
+
+Os testes verificam o funcionamento básico das principais classes do SDK:
+- MundiAPIClient
+- APIHelper
+- Configuration
+- BaseController
 
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
-To resolve these dependencies, we use the Composer package manager which requires PHP greater than 5.3.2 installed in your system. 
+To resolve these dependencies, we use the Composer package manager which requires PHP greater than 8.0 installed in your system. 
 Visit [https://getcomposer.org/download/](https://getcomposer.org/download/) to download the installer file for Composer and run it in your system. 
 Open command prompt and type ```composer --version```. This should display the current version of the Composer installed if the installation was successful.
 
@@ -19,7 +46,7 @@ Open command prompt and type ```composer --version```. This should display the c
 CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs. So by default it will reject all SSL certificates as unverifiable. You will have to get your CA's cert and point curl at it. The steps are as follows:
 
 1. Download the certificate bundle (.pem file) from [https://curl.haxx.se/docs/caextract.html](https://curl.haxx.se/docs/caextract.html) on to your system.
-2. Add curl.cainfo = "PATH_TO/cacert.pem" to your php.ini file located in your php installation. “PATH_TO” must be an absolute path containing the .pem file.
+2. Add curl.cainfo = "PATH_TO/cacert.pem" to your php.ini file located in your php installation. "PATH_TO" must be an absolute path containing the .pem file.
 
 ```ini
 [curl]
